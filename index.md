@@ -44,3 +44,11 @@ Thus, the Krylov subspace forms a basis for the solutions of the PDE system.
 
 It turns out that we don't need to know all the vectors in the subspace;
 we only need about 10.
+The ROM is constructed by looking at the differences between solutions
+and accurately captures the dynamics with only a few examples.
+This is far better performance than a neural network function approximator
+because vanilla NNets don't exploit the known dynamics for the system.
+Here, we can write the equation of state,
+so we can take advantage of it directly.
+
+For more information on the impacts of this method, see [here](https://www.epc.ed.tum.de/en/rt/research/model-order-reduction/past-topics/krylov-subspace-methods/).
