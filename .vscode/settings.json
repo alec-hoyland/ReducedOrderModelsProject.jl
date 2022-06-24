@@ -1,0 +1,10 @@
+{
+    "[julia]": {
+        "diffEditor.codeLens": true,
+        "editor.bracketPairColorization.enabled": true,
+        "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+        "editor.codeLensFontFamily": "Fira Code"
+    },
+    "julia.NumThreads": 0
+    
+}
