@@ -1,3 +1,46 @@
 ## Reduced Order Models
 
-[Code](project.jl.html)
+In this project,
+I derive a formulation for a reduced order model that exploits the structure
+of a partial differential equation
+to solve it at high accuracy at arbitrary parameter values,
+using far fewer FLOPs to do so than with traditional linear system solvers,
+numerical simulation, or approximation by neural networks (surrogates).
+
+To see the deeper technical explanation,
+code, and figures, take a look at this [notebook](project.jl.html).
+
+## What is a reduced order model?
+
+A reduced order model (ROM)
+is a smaller model that mimics the results of a larger model.
+Often in mathematical modeling and numerical simulation,
+you run into issues with increasing computational complexity
+where the state spaces gets too large,
+or numerical simulations become infeasible.
+ROMs alleviate this problem by providing a smaller model
+that can be used in simulations or numerical computations instead.
+A good ROM has a small approximation error compared to the full order model
+and conserves the properties of the larger model.
+
+## How does this work?
+
+We start with a one-dimensional diffusion partial differential equation]
+with known initial and boundary conditions
+and take the Laplace transform to get an easier system to solve.
+This system has one parameter and our goal is to find a way
+to get the solution of the system at any arbitrary parameter value.
+
+We discretize the PDE to form a linear system.
+Given the solution at a few parameter values,
+we can start to build our data-driven ROM.
+
+The key idea here is that we can construct
+a rational Krylov subspace
+where the vectors in the subspace are solutions at different parameter values.
+A solution for an arbitary parameter value is a linear combination
+of those solutions from the subspace.
+Thus, the Krylov subspace forms a basis for the solutions of the PDE system.
+
+It turns out that we don't need to know all the vectors in the subspace;
+we only need about 10.
