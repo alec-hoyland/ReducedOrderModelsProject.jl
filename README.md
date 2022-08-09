@@ -3,7 +3,7 @@ A personal project investigating and benchmarking reduced order models for parti
 
 In this project, I derive a formulation for a reduced order model that exploits the structure of a partial differential equation to solve it at high accuracy at arbitrary parameter values, using far fewer FLOPs to do so than with traditional linear system solvers, numerical simulation, or approximation by neural networks (surrogates).
 
-**For more information, see [here](https://alec-hoyland.github.io/ReducedOrderModelsProject.jl/).**
+**For a notebook available in Julia and HTML, see [here](https://alec-hoyland.github.io/ReducedOrderModelsProject.jl/).**
 
 ### What is a reduced order model?
 
